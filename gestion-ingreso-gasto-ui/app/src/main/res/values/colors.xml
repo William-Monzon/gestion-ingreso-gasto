@@ -2,4 +2,25 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="purple_500">#6200EE</color>
+    <color name="background_app">#F8F9FA</color>
+
+    <color name="gasto_fondo">#FFF0F0</color>
+    <color name="gasto_borde">#FFCDD2</color>
+    <color name="gasto_primario">#D32F2F</color>
+
+    <color name="ingreso_fondo">#E8F5E9</color>
+    <color name="ingreso_borde">#C8E6C9</color>
+    <color name="ingreso_primario">#388E3C</color>
+
+    <color name="balance_fondo">#E3F2FD</color>
+    <color name="balance_borde">#BBDEFB</color>
+    <color name="balance_primario">#1976D2</color>
+
+    <color name="texto_titulo">#212121</color>
+    <color name="texto_subtitulo">#757575</color>
+    <color name="texto_secundario">#616161</color>
+    <color name="blanco_translucido">#22FFFFFF</color>
+
 </resources>
