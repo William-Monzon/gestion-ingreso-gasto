@@ -40,4 +40,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    implementation("umg.edu.gt.progra2:gestion-ingreso-gasto-core:1.0.0-SNAPSHOT")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
 }
