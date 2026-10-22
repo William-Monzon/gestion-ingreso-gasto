@@ -10,9 +10,4 @@ data class Ingreso(
     override val monto: BigDecimal,
     val categoria: CategoriaIngreso,
     override val fecha: LocalDate
-) : Movimiento {
-    init {
-        require(descripcion.isNotBlank()) { "La descripción no puede estar vacía" }
-        require(monto.signum() > 0) { "El monto debe ser mayor a cero" }
-    }
-}
+) : Movimiento

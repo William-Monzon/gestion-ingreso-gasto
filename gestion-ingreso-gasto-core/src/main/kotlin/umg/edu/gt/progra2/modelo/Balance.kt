@@ -15,19 +15,9 @@ data class Balance(
         get() = balanceNeto.signum() >= 0
 
     companion object {
-        fun de(ingresos: List<Ingreso>, gastos: List<Gasto>): Balance {
-            val totalIngresos = ingresos
-                .map { it.monto }
-                .fold(BigDecimal.ZERO, BigDecimal::add)
-
-            val totalGastos = gastos
-                .map { it.monto }
-                .fold(BigDecimal.ZERO, BigDecimal::add)
-
-            return Balance(
-                totalIngresos = totalIngresos,
-                totalGastos = totalGastos
-            )
-        }
+        fun de(ingresos: List<Ingreso>, gastos: List<Gasto>) = Balance(
+            totalIngresos = ingresos.sumOf { it.monto },
+            totalGastos = gastos.sumOf { it.monto }
+        )
     }
 }
