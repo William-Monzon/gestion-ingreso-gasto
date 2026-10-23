@@ -27,7 +27,7 @@ class ControlIngresos(private val repositorio: IngresoRepositorio,
 
     suspend fun actualizar(ingreso: Ingreso): String? {
         validar(ingreso)?.let { return it }
-        return if (repositorio.actualizar(ingreso)) null else "No existe el gasto #${ingreso.id}"
+        return if (repositorio.actualizar(ingreso)) null else "No existe el ingreso #${ingreso.id}"
     }
 
     suspend fun buscarPorId(id: Int): Ingreso? = repositorio.buscarPorId(id)
@@ -45,7 +45,7 @@ class ControlIngresos(private val repositorio: IngresoRepositorio,
     suspend fun totalPorCategoria(): Map<CategoriaIngreso, BigDecimal> =
         repositorio.listar()
             .groupBy { it.categoria }
-            .mapValues { (_, gastos) -> gastos.sumOf { it.monto } }
+            .mapValues { (_, ingresos) -> ingresos.sumOf { it.monto } }
 
 
     suspend fun resumen(): String {
