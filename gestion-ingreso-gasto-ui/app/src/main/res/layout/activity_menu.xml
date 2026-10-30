@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/background_app">
+    android:background="?attr/colorSurface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,17 +14,18 @@
         android:padding="20dp"
         tools:context=".ui.MenuActivity">
 
+        <!-- Tarjeta de bienvenida -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardBienvenida"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/design_default_color_primary"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="¡Hola de nuevo!"
-                    android:textColor="@android:color/white"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="14sp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -47,44 +48,47 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="Cargando nombre..."
-                    android:textColor="@android:color/white"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvSaludo" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Título de opciones -->
         <TextView
             android:id="@+id/tvOpciones"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:text="¿Qué deseas gestionar?"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/texto_titulo"
+            android:textColor="?attr/colorOnSurface"
             app:layout_constraintTop_toBottomOf="@id/cardBienvenida"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="28dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Registrar gastos -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnGastos"
             android:layout_width="0dp"
             android:layout_height="85dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="@color/gasto_fondo"
-            app:strokeColor="@color/gasto_borde"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:strokeColor="?attr/colorOutlineVariant"
             app:strokeWidth="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintTop_toBottomOf="@id/tvOpciones"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,15 +100,15 @@
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@android:drawable/ic_delete"
-                    app:tint="@color/gasto_primario" />
+                    android:src="@android:drawable/arrow_down_float"
+                    app:tint="?attr/colorOnErrorContainer" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -112,14 +116,15 @@
                         android:text="Registrar Gastos"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/gasto_primario" />
+                        android:textColor="?attr/colorOnSurface" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Salidas de dinero y compras"
                         android:textSize="12sp"
-                        android:textColor="@color/texto_subtitulo" />
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
                 </LinearLayout>
 
                 <TextView
@@ -127,26 +132,28 @@
                     android:layout_height="wrap_content"
                     android:text="➔"
                     android:textSize="20sp"
-                    android:textColor="@color/gasto_primario" />
+                    android:textColor="?attr/colorOnErrorContainer" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Registrar ingresos -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnIngresos"
             android:layout_width="0dp"
             android:layout_height="85dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="@color/ingreso_fondo"
-            app:strokeColor="@color/ingreso_borde"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:strokeColor="?attr/colorOutlineVariant"
             app:strokeWidth="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintTop_toBottomOf="@id/btnGastos"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -158,15 +165,15 @@
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@android:drawable/ic_input_add"
-                    app:tint="@color/ingreso_primario" />
+                    android:src="@android:drawable/arrow_up_float"
+                    app:tint="?attr/colorOnSecondaryContainer" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -174,14 +181,15 @@
                         android:text="Registrar Ingresos"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/ingreso_primario" />
+                        android:textColor="?attr/colorOnSurface" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Entradas de dinero y sueldos"
                         android:textSize="12sp"
-                        android:textColor="@color/texto_subtitulo" />
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
                 </LinearLayout>
 
                 <TextView
@@ -189,26 +197,28 @@
                     android:layout_height="wrap_content"
                     android:text="➔"
                     android:textSize="20sp"
-                    android:textColor="@color/ingreso_primario" />
+                    android:textColor="?attr/colorOnSecondaryContainer" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Balance general -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/btnBalance"
             android:layout_width="0dp"
             android:layout_height="85dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="20dp"
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="@color/balance_fondo"
-            app:strokeColor="@color/balance_borde"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:strokeColor="?attr/colorOutlineVariant"
             app:strokeWidth="1dp"
+            app:cardElevation="0dp"
             app:layout_constraintTop_toBottomOf="@id/btnIngresos"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,14 +231,14 @@
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@android:drawable/ic_menu_sort_by_size"
-                    app:tint="@color/balance_primario" />
+                    app:tint="?attr/colorOnTertiaryContainer" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -236,14 +246,15 @@
                         android:text="Balance General"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/balance_primario" />
+                        android:textColor="?attr/colorOnSurface"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Resumen total de tus finanzas"
                         android:textSize="12sp"
-                        android:textColor="@color/texto_subtitulo" />
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
                 </LinearLayout>
 
                 <TextView
@@ -251,23 +262,25 @@
                     android:layout_height="wrap_content"
                     android:text="➔"
                     android:textSize="20sp"
-                    android:textColor="@color/balance_primario" />
+                    android:textColor="?attr/colorOnTertiaryContainer" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Configuración del perfil -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPerfilUsuario"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
             android:text="Configuración de Perfil"
             android:textSize="14sp"
-            android:textColor="@color/texto_secundario"
+            android:textColor="?attr/colorOnSurfaceVariant"
             app:layout_constraintTop_toBottomOf="@id/btnBalance"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
