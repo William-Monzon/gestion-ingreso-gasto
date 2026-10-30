@@ -24,6 +24,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
     }
 
     buildFeatures {
@@ -38,7 +39,7 @@ ksp {
 dependencies {
 
     implementation("umg.edu.gt.progra2:gestion-ingreso-gasto-core:1.0.0-SNAPSHOT")
-
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
     // UI con vistas XML
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

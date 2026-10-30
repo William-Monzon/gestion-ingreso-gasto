@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import umg.edu.gt.progra2.databinding.ActivityMenuBinding
+import umg.edu.gt.progra2.ui.gasto.GastoActivity
+import umg.edu.gt.progra2.ui.ingreso.IngresoActivity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    
+
     override fun onResume() {
         super.onResume()
         val sharedPreferences = getSharedPreferences(Prefs.ARCHIVO, MODE_PRIVATE)
