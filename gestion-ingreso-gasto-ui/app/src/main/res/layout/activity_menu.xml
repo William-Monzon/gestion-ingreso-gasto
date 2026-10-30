@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        tools:context=".MenuActivity">
+        tools:context=".ui.MenuActivity">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardBienvenida"
@@ -45,35 +45,13 @@
                     android:id="@+id/tvNombreUsuario"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:text="Cargando nombre..."
                     android:textColor="@android:color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@id/tvSaludo"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btnEditarPerfil"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="12dp" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnEditarPerfil"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    app:cardCornerRadius="24dp"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/blanco_translucido"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="Editar Perfil"
-                        android:src="@android:drawable/ic_menu_edit"
-                        app:tint="@android:color/white" />
-                </com.google.android.material.card.MaterialCardView>
+                    app:layout_constraintTop_toBottomOf="@id/tvSaludo" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>

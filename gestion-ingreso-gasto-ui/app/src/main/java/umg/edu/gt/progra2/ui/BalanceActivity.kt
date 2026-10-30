@@ -1,2 +1,4 @@
-package umg.edu.gt.progra2.ui 
+package umg.edu.gt.progra2.ui
 
+class BalanceActivity {
+}
