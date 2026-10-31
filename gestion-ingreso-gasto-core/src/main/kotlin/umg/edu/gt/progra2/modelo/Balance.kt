@@ -13,7 +13,9 @@ data class Balance(
 
     val esPositivo: Boolean
         get() = balanceNeto.signum() >= 0
-
+//Companion para instanciar de forma más sencilla
+//La suma se realiza con .sumOf() de BigDecimal y en vez de ciclo for para recorrer
+//todos los ingresos y gastos se utiliza la expresión lambda.
     companion object {
         fun de(ingresos: List<Ingreso>, gastos: List<Gasto>) = Balance(
             totalIngresos = ingresos.sumOf { it.monto },

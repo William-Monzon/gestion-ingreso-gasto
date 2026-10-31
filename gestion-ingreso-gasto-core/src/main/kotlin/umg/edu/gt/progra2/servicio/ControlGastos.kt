@@ -8,7 +8,7 @@ import java.math.BigDecimal
 import java.time.Clock
 import java.time.LocalDate
 
-
+//Uso de Clock para no tener problemas con LocalDate()
 class ControlGastos(private val repositorio: GastoRepositorio,
                     private val reloj: Clock = Clock.systemDefaultZone()) {
 
@@ -42,6 +42,7 @@ class ControlGastos(private val repositorio: GastoRepositorio,
     suspend fun total(): BigDecimal =
         repositorio.listar().sumOf { it.monto }
 
+    //Agrupa los gastos por categoria y los guarda en un Map en donde el tipo es la clave el valor es el gasto, luego los suma
     suspend fun totalPorCategoria(): Map<CategoriaGasto, BigDecimal> =
         repositorio.listar()
             .groupBy { it.categoria }

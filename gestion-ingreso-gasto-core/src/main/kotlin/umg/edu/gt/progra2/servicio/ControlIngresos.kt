@@ -1,6 +1,5 @@
 package umg.edu.gt.progra2.servicio
 
-
 import umg.edu.gt.progra2.datos.ingreso.IngresoRepositorio
 import umg.edu.gt.progra2.modelo.ingreso.CategoriaIngreso
 import umg.edu.gt.progra2.modelo.ingreso.Ingreso
@@ -9,6 +8,7 @@ import java.math.BigDecimal
 import java.time.Clock
 import java.time.LocalDate
 
+//Mimso diseño que ControlGastos, uso de Clock, lambdas para reemplazar los for
 class ControlIngresos(private val repositorio: IngresoRepositorio,
                     private val reloj: Clock = Clock.systemDefaultZone()) {
 
@@ -50,7 +50,7 @@ class ControlIngresos(private val repositorio: IngresoRepositorio,
 
     suspend fun resumen(): String {
         val ingresos = repositorio.listar()
-        val palabra = if (ingresos.size == 1) "ingreso" else "ingreso"
+        val palabra = if (ingresos.size == 1) "ingreso" else "ingresos"
         return "${ingresos.size} $palabra · Total: ${formatearQuetzales(ingresos.sumOf { it.monto })}"
     }
 }

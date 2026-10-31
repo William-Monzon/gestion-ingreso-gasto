@@ -2,6 +2,8 @@ package umg.edu.gt.progra2.datos.gasto
 
 import umg.edu.gt.progra2.modelo.gasto.Gasto
 
+//Class para guardar los gastos en memoria
+//Se usa lambdas en vez de for para recorrer los gastos
 class GastoRepositorioMemoria : GastoRepositorio {
 
     private val gastos = mutableListOf<Gasto>()

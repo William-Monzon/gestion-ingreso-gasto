@@ -12,7 +12,7 @@ import umg.edu.gt.progra2.util.formatearQuetzales
 import java.math.BigDecimal
 import java.time.LocalDate
 
-
+//Main para probar el programa en la consola
 suspend fun main()  {
     val controlGastos = ControlGastos(GastoRepositorioMemoria())
     val controlIngresos = ControlIngresos(IngresoRepositorioMemoria())
@@ -57,6 +57,7 @@ suspend fun main()  {
     }
 }
 
+// registrarIngreso y registrarGasto llama al método registrarMovimiento
 private suspend fun registrarIngreso(control: ControlIngresos) {
     registrarMovimiento(
         titulo = "REGISTRAR INGRESO",
@@ -75,6 +76,7 @@ private suspend fun registrarGasto(control: ControlGastos) {
     }
 }
 
+//Te lista las transacciones eligiendo si quieres ingresos o gastos
 private suspend fun listarTransacciones(controlIngresos: ControlIngresos, controlGastos: ControlGastos) {
     println("\n--- HISTORIAL ---")
     val ingresos = controlIngresos.listar()
@@ -91,6 +93,7 @@ private suspend fun listarTransacciones(controlIngresos: ControlIngresos, contro
     }
 }
 
+//Muestra el balance en quetzales
 private suspend fun mostrarBalance(controlIngresos: ControlIngresos, controlGastos: ControlGastos) {
     val totalIngresos = controlIngresos.total()
     val totalGastos = controlGastos.total()
@@ -149,6 +152,7 @@ private suspend fun actualizarRegistro(controlIngresos: ControlIngresos, control
     }
 }
 
+// Se elimina un registro por id validando que el id exista
 private suspend fun eliminarRegistro(controlIngresos: ControlIngresos, controlGastos: ControlGastos) {
     print("¿Qué desea eliminar? (1. Ingreso / 2. Gasto): ")
     when (readlnOrNull()?.trim()) {
@@ -168,6 +172,7 @@ private suspend fun eliminarRegistro(controlIngresos: ControlIngresos, controlGa
     }
 }
 
+//Método generico utilizado por ingresos y gastos para registrar sus operaciones
 private suspend fun registrarMovimiento(
     titulo: String,
     categorias: List<Any>,
@@ -205,6 +210,7 @@ private suspend fun registrarMovimiento(
     }
 }
 
+// Método para validar el Id
 private fun leerIdValido(): Int? {
     val id = readlnOrNull()?.trim()?.toIntOrNull()
     if (id == null) {
@@ -213,6 +219,7 @@ private fun leerIdValido(): Int? {
     return id
 }
 
+// Método para actualizar los campos y validando que lo nuevo cumpla
 private suspend fun actualizarCampos(
     nombre: String,
     descripcionActual: String,

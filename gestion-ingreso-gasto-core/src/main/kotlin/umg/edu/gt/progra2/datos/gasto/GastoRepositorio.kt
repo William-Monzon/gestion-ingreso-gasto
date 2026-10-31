@@ -1,8 +1,8 @@
 package umg.edu.gt.progra2.datos.gasto
 
-
 import umg.edu.gt.progra2.modelo.gasto.Gasto
 
+//Interfaz que tiene el CRUD para gastos, se usa suspend para que al realizar una operación lenta no se congele la app
 interface GastoRepositorio {
 
     suspend fun agregar(gasto: Gasto): Gasto

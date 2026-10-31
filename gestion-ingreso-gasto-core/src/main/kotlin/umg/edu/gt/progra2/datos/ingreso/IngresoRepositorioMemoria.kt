@@ -2,6 +2,8 @@ package umg.edu.gt.progra2.datos.ingreso
 
 import umg.edu.gt.progra2.modelo.ingreso.Ingreso
 
+//Class para guardar los ingresos en memoria
+//Se usa lambdas en vez de for para recorrer los ingresos
 class IngresoRepositorioMemoria : IngresoRepositorio {
 
     private val ingresos = mutableListOf<Ingreso>()

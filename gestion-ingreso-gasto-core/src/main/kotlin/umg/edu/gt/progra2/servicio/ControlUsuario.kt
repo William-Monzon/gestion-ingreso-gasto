@@ -3,6 +3,8 @@ package umg.edu.gt.progra2.servicio
 import umg.edu.gt.progra2.datos.usuario.UsuarioRepositorio
 import umg.edu.gt.progra2.modelo.Usuario
 
+//Se hacen validaciones del usuario
+//Se valida y persiste el usuario único
 class ControlUsuario(private val repositorio: UsuarioRepositorio) {
 
     fun validar(usuario: Usuario): String? = when {
