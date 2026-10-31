@@ -46,10 +46,11 @@ class BalanceActivity : AppCompatActivity() {
             binding.tvSaldoTotal.text = formatearQuetzales(balance.balanceNeto)
             binding.tvTotalIngresos.text = "+ " + formatearQuetzales(balance.totalIngresos)
             binding.tvTotalGastos.text = "- " + formatearQuetzales(balance.totalGastos)
-
+            binding.tvDiesmo.text = formatearQuetzales(balance.diesPorciento)
             val movimientos: List<Movimiento> = (ingresos + gastos)
                 .sortedWith(compareByDescending<Movimiento> { it.fecha }.thenByDescending { it.id })
             adapter.mostrar(movimientos)
+
         }
     }
 
