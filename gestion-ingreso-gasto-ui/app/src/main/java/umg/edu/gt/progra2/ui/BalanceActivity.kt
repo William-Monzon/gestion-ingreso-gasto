@@ -31,7 +31,7 @@ class BalanceActivity : AppCompatActivity() {
 
         binding.btnVolverMenu.setOnClickListener { finish() }
     }
-
+    // Con onResume se recargan los datos actualizados
     override fun onResume() {
         super.onResume()
         cargar()
@@ -53,6 +53,7 @@ class BalanceActivity : AppCompatActivity() {
         }
     }
 
+    // Si se toca una transacción en balance esto dirige al formulario correcto de esa transacción para actualizarla o eliminarla
     private fun abrirFormulario(movimiento: Movimiento) {
         val intent = when (movimiento) {
             is Gasto -> Intent(this, FormularioGastoActivity::class.java)

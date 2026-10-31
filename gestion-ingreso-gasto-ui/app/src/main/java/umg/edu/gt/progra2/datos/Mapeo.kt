@@ -8,6 +8,8 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.LocalDate
 
+// El Mapeo sirve para conectar SQLite con la lógica de la app
+// Convierte a lenguaje de SQLite
 private fun BigDecimal.aCentavos(): Long =
     movePointRight(2).setScale(0, RoundingMode.HALF_UP).longValueExact()
 

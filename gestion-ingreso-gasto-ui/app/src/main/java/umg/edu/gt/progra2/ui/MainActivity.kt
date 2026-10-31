@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         val correoGuardado = sharedPreferences.getString(Prefs.CORREO, null)
 
         esEdicion = intent.getBooleanExtra(Prefs.MODO_EDICION, false)
-
+        // Si ya hay un usuario pasa directamente al menú y no muestra esta pantalla
         if (nombreGuardado != null && !esEdicion) {
             irAlMenu(nombreGuardado)
             return
         }
 
-        // Inicializar la interfaz antes de acceder a sus elementos
+        // Inicializa la interfaz antes de acceder a sus elementos
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnGuardar.setOnClickListener {
             val nombre = binding.etNombre.text.toString().trim()
             val correo = binding.etCorreo.text.toString().trim()
-
+            //Se valida el nombre
             if (nombre.isEmpty()) {
                 mostrarAviso("El nombre no puede estar vacío.")
                 return@setOnClickListener
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 mostrarAviso("El correo no puede estar vacío.")
                 return@setOnClickListener
             }
-
+            // Se valida el correo
             if (!Patterns.EMAIL_ADDRESS.matcher(correo).matches()) {
                 mostrarAviso("El correo no es válido.")
                 return@setOnClickListener

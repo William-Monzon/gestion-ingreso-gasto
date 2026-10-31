@@ -7,6 +7,7 @@ import umg.edu.gt.progra2.databinding.ActivityMenuBinding
 import umg.edu.gt.progra2.ui.gasto.GastoActivity
 import umg.edu.gt.progra2.ui.ingreso.IngresoActivity
 
+// menú que muestra
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMenuBinding

@@ -12,6 +12,7 @@ import umg.edu.gt.progra2.modelo.gasto.Gasto
 import umg.edu.gt.progra2.modelo.ingreso.Ingreso
 import umg.edu.gt.progra2.util.formatearQuetzales
 
+// Unifica los gastos y los ingresos en el Balance
 class MovimientoAdapter(
     private val alTocarMovimiento: (Movimiento) -> Unit
 ) : RecyclerView.Adapter<MovimientoAdapter.MovimientoViewHolder>() {
@@ -34,10 +35,11 @@ class MovimientoAdapter(
             is Ingreso -> movimiento.categoria.nombreVisible
             else -> ""
         }
+        // Se valida que tipo de moviemiento es para el color
         val esIngreso = movimiento is Ingreso
         val color = ContextCompat.getColor(
             holder.binding.root.context,
-            if (esIngreso) R.color.ingreso_primario else R.color.gasto_primario
+            if (esIngreso) R.color.ingreso_primario else R.color.gasto_primario //Da el color según el tipo que sea
         )
 
         holder.binding.tvDescripcion.text = movimiento.descripcion

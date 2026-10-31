@@ -3,6 +3,7 @@ package umg.edu.gt.progra2.datos
 import umg.edu.gt.progra2.datos.ingreso.IngresoRepositorio
 import umg.edu.gt.progra2.modelo.ingreso.Ingreso
 
+// Implementa la inteRfaz de IngresoRepositorio para usar el CRUD
 class IngresoRepositorioRoom(private val dao: MovimientoDao) : IngresoRepositorio {
 
     override suspend fun agregar(ingreso: Ingreso): Ingreso {

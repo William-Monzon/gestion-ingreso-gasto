@@ -1,5 +1,6 @@
 package umg.edu.gt.progra2.ui
 
+// Prefs para no tener errores tipográficos
 object Prefs {
     const val ARCHIVO = "AppPreferences"
     const val NOMBRE = "NOMBRE_USUARIO"

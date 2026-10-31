@@ -5,6 +5,8 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 
+// Se crea la tabla, es un DAO generico para que tanto gastos como ingresos la utilicen
+// Los gastos e ingresos se diferencian por el tipo
 @Dao
 interface MovimientoDao {
 

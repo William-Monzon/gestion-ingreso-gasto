@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.ksp)  //plugin para usar el ksp
 }
 
 android {
@@ -37,7 +37,7 @@ ksp {
 }
 
 dependencies {
-
+    // Implementaciones del core
     implementation("umg.edu.gt.progra2:gestion-ingreso-gasto-core:1.0.0-SNAPSHOT")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
     // UI con vistas XML

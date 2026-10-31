@@ -3,6 +3,7 @@ package umg.edu.gt.progra2.datos
 import umg.edu.gt.progra2.datos.gasto.GastoRepositorio
 import umg.edu.gt.progra2.modelo.gasto.Gasto
 
+// Implementa la inteRfaz de GastoRepositorio para usar el CRUD
 class GastoRepositorioRoom(private val dao: MovimientoDao) : GastoRepositorio {
 
     override suspend fun agregar(gasto: Gasto): Gasto {
@@ -17,7 +18,7 @@ class GastoRepositorioRoom(private val dao: MovimientoDao) : GastoRepositorio {
         dao.buscarPorId(id, TipoMovimiento.GASTO)?.toGasto()
 
     override suspend fun actualizar(gasto: Gasto): Boolean {
-        // @Update reemplaza por id sin mirar el tipo, así que primero comprobamos que sea un gasto
+        // @Update reemplaza por Id sin mirar el tipo, así que primero comprobamos que sea un gasto
         if (dao.buscarPorId(gasto.id, TipoMovimiento.GASTO) == null) return false
         return dao.actualizar(gasto.toEntity()) > 0
     }
